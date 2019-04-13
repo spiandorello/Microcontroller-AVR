@@ -1,2 +1,4 @@
 # Microcontroller-AVR
-Lybra
+
+Code Examples.
+Lib for Atmega328p.
