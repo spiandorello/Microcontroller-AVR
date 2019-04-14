@@ -13,7 +13,10 @@
 //#define COM_CATODO
 
 #define DISPLAY_PORT GPIO_D
-#define DISPLAY_SELECT GPIO_B
+
+#define SELECTOR_PORT GPIO_B
+#define EN_1 PB0
+#define EN_2 PB1
 
 
 /**
@@ -22,7 +25,7 @@
   *
   * @retval Nenhum.
   */
-void display_init();
+void display_mux_init();
 
 /**
   * @brief  Escrevre no display de 7 segmentos.
@@ -31,6 +34,6 @@ void display_init();
   *
   * @retval Nenhum.
   */
-void display_write(uint8_t data);
+void display_mux_write(uint8_t data);
 
 #endif /* DISPLAY_LEDDISPLAY_H_ */
