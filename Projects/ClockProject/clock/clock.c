@@ -10,6 +10,7 @@ volatile clock_t clockInfo;
 
 ISR(TIMER1_COMPA_vect) {
 	clockInfo.sec++;
+	clock_function();
 }
 
 void timer1_hardware_init() {
@@ -21,9 +22,10 @@ void timer1_hardware_init() {
 
 void clock_init() {
 	timer1_hardware_init();
+	clockInfo.min = 0x3B;
 }
 
-void clock_function() {
+void inline clock_function() {
 	if (clockInfo.sec > 59) {
 		clockInfo.sec = 0;
 		clockInfo.min++;
